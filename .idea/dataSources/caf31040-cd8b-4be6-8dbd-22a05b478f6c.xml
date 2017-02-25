@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="HOARD@192.168.0.5">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="HOARD">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="test"/>
+    <table id="5" parent="2" name="hoard_book"/>
+    <table id="6" parent="2" name="hoard_comic"/>
+    <table id="7" parent="2" name="hoard_movie"/>
+    <table id="8" parent="2" name="hoard_music"/>
+    <table id="9" parent="2" name="hoard_tabletop"/>
+    <table id="10" parent="2" name="hoard_tv_series"/>
+    <table id="11" parent="2" name="hoard_user"/>
+    <table id="12" parent="2" name="hoard_videogame"/>
+    <column id="13" parent="5" name="book_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="5" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="5" name="book_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="5" name="book_author">
+      <Position>4</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="17" parent="5" name="book_publisher">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="18" parent="5" name="book_isbn">
+      <Position>6</Position>
+      <DataType>varchar(14)|0</DataType>
+    </column>
+    <column id="19" parent="5" name="book_edition">
+      <Position>7</Position>
+      <DataType>smallint(6)|0</DataType>
+    </column>
+    <column id="20" parent="5" name="book_is_read">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="21" parent="5" name="book_is_reading">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="22" parent="5" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="23" parent="5" name="PRIMARY">
+      <ColNames>book_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="5" name="hoard_book_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="25" parent="6" name="comic_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="6" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="6" name="comic_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="6" name="comic_author">
+      <Position>4</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="29" parent="6" name="comic_artist">
+      <Position>5</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="30" parent="6" name="comic_volume">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="6" name="comic_publisher">
+      <Position>7</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="32" parent="6" name="comic_is_read">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="33" parent="6" name="comic_is_reading">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="34" parent="6" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="35" parent="6" name="PRIMARY">
+      <ColNames>comic_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="6" name="hoard_comic_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="37" parent="7" name="movie_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="7" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="7" name="movie_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="7" name="movie_release_year">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="7" name="movie_director">
+      <Position>5</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="42" parent="7" name="movie_is_watched">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="43" parent="7" name="movie_is_watching">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="44" parent="7" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="45" parent="7" name="PRIMARY">
+      <ColNames>movie_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="7" name="hoard_movie_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="47" parent="8" name="music_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="8" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="8" name="music_artist">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="8" name="music_album_title">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="8" name="music_is_listening">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="52" parent="8" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="53" parent="8" name="PRIMARY">
+      <ColNames>music_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="8" name="hoard_music_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="55" parent="9" name="tabletop_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="9" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="9" name="tabletop_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="9" name="tabletop_min_player">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="59" parent="9" name="tabletop_max_player">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="60" parent="9" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="61" parent="9" name="PRIMARY">
+      <ColNames>tabletop_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="62" parent="9" name="hoard_tabletop_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="63" parent="10" name="tv_series_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="10" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="10" name="tv_series_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="10" name="tv_series_release_year">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="67" parent="10" name="tv_series_director">
+      <Position>5</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="68" parent="10" name="tv_series_season">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="10" name="tv_series_is_watched">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="70" parent="10" name="tv_series_is_watching">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="71" parent="10" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="72" parent="10" name="PRIMARY">
+      <ColNames>tv_series_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="10" name="hoard_tv_series_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+    <column id="74" parent="11" name="user_email">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="11" name="user_username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="11" name="user_first_name">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="77" parent="11" name="user_last_name">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="78" parent="11" name="PRIMARY">
+      <ColNames>user_email</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="79" parent="12" name="videogame_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="80" parent="12" name="user_email">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="12" name="videogame_title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="12" name="videogame_developer">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="12" name="videogame_is_played">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="84" parent="12" name="videogame_is_playing">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="85" parent="12" name="videogame_is_complete">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="86" parent="12" name="user_email">
+      <ColNames>user_email</ColNames>
+    </index>
+    <key id="87" parent="12" name="PRIMARY">
+      <ColNames>videogame_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="12" name="hoard_videogame_ibfk_1">
+      <ColNames>user_email</ColNames>
+      <RefSchemaName>HOARD</RefSchemaName>
+      <RefTableName>hoard_user</RefTableName>
+      <RefColNames>user_email</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

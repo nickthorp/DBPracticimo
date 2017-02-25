@@ -1,0 +1,21 @@
+group 'DBPractice'
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.mariadb.jdbc:mariadb-java-client:1.4.6")
+    }
+}
