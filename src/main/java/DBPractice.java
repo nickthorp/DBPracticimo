@@ -8,6 +8,8 @@ public class DBPractice {
     private static final String USER = "nthorp";
     private static final String PASS = "nopat";
 
+    private static final String SQL = "SELECT * FROM hoard_user";
+
     public static void main(String[] args){
         Connection conn = null;
         Statement stmt = null;
@@ -19,9 +21,7 @@ public class DBPractice {
 
             System.out.println("Creating a statement...");
             stmt = conn.createStatement();
-            String sql;
-            sql = "SELECT * FROM hoard_user";
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(SQL);
 
             //STEP 5: Extract data from result set
             while(rs.next()){
@@ -46,6 +46,7 @@ public class DBPractice {
             se.printStackTrace();
         }catch(Exception e){
             //Handle errors for Class.forName
+            System.out.println("Uh oh!");
             e.printStackTrace();
         }finally {
             //finally block used to close resources
@@ -53,6 +54,7 @@ public class DBPractice {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                se2.printStackTrace();
             }// nothing we can do
             try {
                 if (conn != null)
